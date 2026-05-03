@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakash Mishra — AI Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Neural Network Canvas -->
+    <canvas id="neuralCanvas"></canvas>
+    
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-brain">
+            <svg viewBox="0 0 100 100" class="brain-svg">
+                <circle cx="50" cy="25" r="5" class="neuron n1"/>
+                <circle cx="20" cy="50" r="5" class="neuron n2"/>
+                <circle cx="80" cy="50" r="5" class="neuron n3"/>
+                <circle cx="30" cy="80" r="5" class="neuron n4"/>
+                <circle cx="70" cy="80" r="5" class="neuron n5"/>
+                <circle cx="50" cy="55" r="5" class="neuron n6"/>
+                <line x1="50" y1="25" x2="20" y2="50" class="synapse"/>
+                <line x1="50" y1="25" x2="80" y2="50" class="synapse"/>
+                <line x1="50" y1="25" x2="50" y2="55" class="synapse"/>
+                <line x1="20" y1="50" x2="30" y2="80" class="synapse"/>
+                <line x1="80" y1="50" x2="70" y2="80" class="synapse"/>
+                <line x1="20" y1="50" x2="50" y2="55" class="synapse"/>
+                <line x1="80" y1="50" x2="50" y2="55" class="synapse"/>
+                <line x1="50" y1="55" x2="30" y2="80" class="synapse"/>
+                <line x1="50" y1="55" x2="70" y2="80" class="synapse"/>
+            </svg>
+        </div>
+        <p class="loader-text">Initializing AI Systems<span class="loader-dots"></span></p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="logo-ai-chip">
+                    <span class="chip-core">PM</span>
+                    <span class="chip-ring"></span>
+                </div>
+                <span class="logo-label">AI<span class="logo-dot">.</span>Dev</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        
+        <div class="hero-content">
+            <div class="hero-profile">
+                <div class="profile-ring">
+                    <img src="images/profile pic.jpeg" alt="Prakash Mishra" class="profile-img">
+                </div>
+                <span class="profile-status"><i class="fas fa-circle"></i> Available for work</span>
+            </div>
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <i class="fas fa-microchip"></i> AI-Powered Developer
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line">Hi, I'm</span>
+                <span class="hero-name">Prakash Mishra</span>
+            </h1>
+            <div class="hero-role-wrapper">
+                <span class="role-bracket">&lt;</span>
+                <p class="hero-subtitle" id="typewriter"></p>
+                <span class="cursor-blink">|</span>
+                <span class="role-bracket">/&gt;</span>
+            </div>
+            <p class="hero-description">
+                AI Developer with <strong>4.5+ years</strong> crafting intelligent systems — from 
+                <span class="highlight-word">Copilot Agents</span> to 
+                <span class="highlight-word">Multi-Agent Architectures</span>, 
+                <span class="highlight-word">RAG Chatbots</span>, and 
+                <span class="highlight-word">Generative AI</span> solutions at enterprise scale.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary btn-glow">
+                    <span class="btn-content"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+                    <span class="btn-shimmer"></span>
+                </a>
+                <a href="#projects" class="btn btn-cyber">
+                    <span class="btn-content"><i class="fas fa-terminal"></i> View Projects</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="4.5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="10">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">AI Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-user-astronaut"></i> WHO AM I</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead">
+                        I'm an <strong>AI Developer</strong> based in <strong>Mumbai, India</strong> — building the future with intelligent systems, one model at a time.
+                    </p>
+                    <p>
+                        With 4.5+ years of hands-on experience, I specialize in crafting 
+                        <span class="text-accent">AI-powered solutions</span>, 
+                        <span class="text-accent">multi-agent systems</span>, and 
+                        <span class="text-accent">enterprise chatbots</span> that transform how businesses operate.
+                    </p>
+                    <p>
+                        Currently at <strong>Bristlecone</strong>, I lead AI initiatives for Mahindra — from building 
+                        <strong>Microsoft Copilot Agents on Teams</strong> to designing 
+                        <strong>multi-agent AI architectures</strong> and deploying 
+                        <strong>RAG-based intelligent systems</strong> at scale.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item glass-card">
+                            <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <span class="detail-label">Location</span>
+                                <span class="detail-value">Vasai, Mumbai, India</span>
+                            </div>
+                        </div>
+                        <div class="detail-item glass-card">
+                            <div class="detail-icon"><i class="fas fa-robot"></i></div>
+                            <div>
+                                <span class="detail-label">Current Role</span>
+                                <span class="detail-value">AI Developer @ Bristlecone</span>
+                            </div>
+                        </div>
+                        <div class="detail-item glass-card">
+                            <div class="detail-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <span class="detail-label">Education</span>
+                                <span class="detail-value">Mumbai University, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">ai_developer.py</span>
+                            <span class="code-live">● LIVE</span>
+                        </div>
+                        <pre class="code-body"><code><span class="keyword">class</span> <span class="class-name">PrakashMishra</span>(<span class="class-name">AIDeveloper</span>):
+    <span class="comment"># Building intelligent systems 🧠</span>
+    
+    <span class="keyword">def</span> <span class="func">__init__</span>(<span class="param">self</span>):
+        <span class="param">self</span>.role = <span class="string">"AI Developer"</span>
+        <span class="param">self</span>.exp = <span class="string">"4.5+ years"</span>
+        <span class="param">self</span>.company = <span class="string">"Bristlecone"</span>
+        <span class="param">self</span>.ai_stack = [
+            <span class="string">"LangChain"</span>, <span class="string">"OpenAI"</span>,
+            <span class="string">"RAG"</span>, <span class="string">"Copilot"</span>,
+            <span class="string">"Multi-Agent"</span>, <span class="string">"MCP"</span>,
+        ]
+        <span class="param">self</span>.backend = [
+            <span class="string">"Django"</span>, <span class="string">"FastAPI"</span>,
+            <span class="string">"Flask"</span>, <span class="string">"GraphQL"</span>,
+        ]
+
+    <span class="keyword">async def</span> <span class="func">build_future</span>(<span class="param">self</span>):
+        <span class="keyword">return</span> <span class="string">"🚀 Shipping AI magic..."</span></code></pre>
+                    </div>
+                    <div class="float-element fe-1">🧠</div>
+                    <div class="float-element fe-2">🤖</div>
+                    <div class="float-element fe-3">⚡</div>
+                    <div class="float-element fe-4">🔗</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-briefcase"></i> CAREER PATH</span>
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-node">
+                        <div class="node-pulse"></div>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">AI Developer</h3>
+                                <p class="timeline-company"><i class="fas fa-building"></i> Bristlecone</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date"><i class="fas fa-calendar"></i> Sep 2022 — Present</span>
+                                <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Created a <strong>Microsoft Copilot Agent</strong> integrated with <strong>MS Teams</strong> for enterprise-grade conversational AI</li>
+                            <li>Designed and orchestrated <strong>multi-agent AI systems</strong> for complex workflow automation</li>
+                            <li>Built <strong>chatbot solutions for Mahindra</strong> using Rasa, OpenAI, and RAG</li>
+                            <li>Built multiple <strong>AI solutions</strong> — intelligent document processing, automated email generation, smart ticketing</li>
+                            <li>Developed and optimized backend solutions using <strong>Django</strong> and <strong>Flask</strong></li>
+                            <li>Designed scalable <strong>REST APIs</strong> and <strong>GraphQL</strong> endpoints</li>
+                            <li>Managed cloud deployments on <strong>Azure</strong> and <strong>AWS</strong></li>
+                            <li>Led <strong>NLP and Generative AI</strong> projects for automation</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Copilot Agent</span>
+                            <span class="tag">MS Teams</span>
+                            <span class="tag">Multi-Agent AI</span>
+                            <span class="tag">LangChain</span>
+                            <span class="tag">OpenAI</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-rocket"></i> MY WORK</span>
+                <h2 class="section-title">AI <span class="gradient-text">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top">
+                        <div class="project-icon-wrap"><i class="fas fa-robot"></i></div>
+                        <span class="project-label"><i class="fas fa-star"></i> Featured</span>
+                    </div>
+                    <h3>RAG-based Chatbot</h3>
+                    <p>Context-aware chatbot using LangChain, FAISS, and OpenAI APIs to retrieve precise answers from internal documents.</p>
+                    <div class="project-tags"><span>LangChain</span><span>FAISS</span><span>OpenAI</span><span>RAG</span></div>
+                </div>
+
+                <div class="project-card featured glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top">
+                        <div class="project-icon-wrap"><i class="fas fa-brain"></i></div>
+                        <span class="project-label"><i class="fas fa-star"></i> Featured</span>
+                    </div>
+                    <h3>AI Agent Development</h3>
+                    <p>LLM-powered agent with external APIs for real-time data processing. Secure tool-calling and error handling.</p>
+                    <div class="project-tags"><span>LLM</span><span>APIs</span><span>Automation</span><span>Tool-calling</span></div>
+                </div>
+
+                <div class="project-card featured glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top">
+                        <div class="project-icon-wrap"><i class="fab fa-microsoft"></i></div>
+                        <span class="project-label"><i class="fas fa-star"></i> Featured</span>
+                    </div>
+                    <h3>Copilot Agent on MS Teams</h3>
+                    <p>Microsoft Copilot Agent integrated with Teams for enterprise AI-powered workflows inside the collaboration platform.</p>
+                    <div class="project-tags"><span>Copilot Studio</span><span>MS Teams</span><span>Azure</span><span>Enterprise AI</span></div>
+                </div>
+
+                <div class="project-card featured glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top">
+                        <div class="project-icon-wrap"><i class="fas fa-project-diagram"></i></div>
+                        <span class="project-label"><i class="fas fa-star"></i> Featured</span>
+                    </div>
+                    <h3>Multi-Agent AI Systems</h3>
+                    <p>Multi-agent architectures where specialized AI agents collaborate — data retrieval, analysis, decision-making, reporting.</p>
+                    <div class="project-tags"><span>Multi-Agent</span><span>LangChain</span><span>Orchestration</span><span>AI Workflows</span></div>
+                </div>
+
+                <div class="project-card glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top"><div class="project-icon-wrap"><i class="fas fa-network-wired"></i></div></div>
+                    <h3>Model Context Protocol (MCP)</h3>
+                    <p>Working with MCP for structured tool communication and agent interoperability.</p>
+                    <div class="project-tags"><span>MCP</span><span>AI Agents</span><span>Interoperability</span></div>
+                </div>
+
+                <div class="project-card glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top"><div class="project-icon-wrap"><i class="fas fa-envelope"></i></div></div>
+                    <h3>Email Draft Generator</h3>
+                    <p>AI tool generating professional email drafts using OpenAI GPT integrated with FastAPI.</p>
+                    <div class="project-tags"><span>OpenAI GPT</span><span>FastAPI</span><span>NLP</span></div>
+                </div>
+
+                <div class="project-card glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top"><div class="project-icon-wrap"><i class="fas fa-ticket-alt"></i></div></div>
+                    <h3>Azure Chatbot Ticketing</h3>
+                    <p>Automated ticket generation via email using Azure NLP chatbot.</p>
+                    <div class="project-tags"><span>Azure</span><span>NLP</span><span>Automation</span></div>
+                </div>
+
+                <div class="project-card glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top"><div class="project-icon-wrap"><i class="fab fa-whatsapp"></i></div></div>
+                    <h3>WhatsApp Bot for Dealers</h3>
+                    <p>WhatsApp chatbot for dealers — outstanding amounts, receipts, account details via FastAPI & Infobip.</p>
+                    <div class="project-tags"><span>FastAPI</span><span>Infobip</span><span>WhatsApp</span></div>
+                </div>
+
+                <div class="project-card glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top"><div class="project-icon-wrap"><i class="fas fa-file-alt"></i></div></div>
+                    <h3>Resume Processing Automation</h3>
+                    <p>AI-powered extraction and comparison of resume data with job descriptions.</p>
+                    <div class="project-tags"><span>AI</span><span>NLP</span><span>OCR</span><span>Automation</span></div>
+                </div>
+
+                <div class="project-card glow-card">
+                    <div class="card-shine"></div>
+                    <div class="project-top"><div class="project-icon-wrap"><i class="fas fa-user-slash"></i></div></div>
+                    <h3>AI-Powered Offboarding Automation</h3>
+                    <p>Automated employee offboarding system using AI for workflow orchestration, access revocation, and compliance checks.</p>
+                    <div class="project-tags"><span>Automation</span><span>AI</span><span>Workflow</span><span>Security</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-microchip"></i> TECH ARSENAL</span>
+                <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-chip"><i class="fab fa-js-square"></i> JavaScript</div>
+                        <div class="skill-chip"><i class="fas fa-database"></i> SQL</div>
+                        <div class="skill-chip"><i class="fas fa-code"></i> .NET</div>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-category-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip">🔗 LangChain</div>
+                        <div class="skill-chip">🤖 OpenAI API</div>
+                        <div class="skill-chip">📚 RAG</div>
+                        <div class="skill-chip">🧩 Copilot Studio</div>
+                        <div class="skill-chip">🤝 Multi-Agent AI</div>
+                        <div class="skill-chip">🟢 Django</div>
+                        <div class="skill-chip">🔵 Flask</div>
+                        <div class="skill-chip">⚡ FastAPI</div>
+                        <div class="skill-chip">📋 Jira</div>
+                        <div class="skill-chip">📮 Postman</div>
+                        <div class="skill-chip">⏰ Cron Job</div>
+                        <div class="skill-chip">🤖 Google ADK</div>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-category-icon"><i class="fas fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip">🔴 Oracle</div>
+                        <div class="skill-chip">🐬 MySQL</div>
+                        <div class="skill-chip">🐘 PostgreSQL</div>
+                        <div class="skill-chip">🍃 MongoDB</div>
+                        <div class="skill-chip">⚡ Redis</div>
+                        <div class="skill-chip">🔥 Firestore</div>
+                        <div class="skill-chip">☁️ GCS</div>
+                        <div class="skill-chip">🧠 Vector DB</div>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-category-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-items">
+                        <div class="skill-chip">☁️ Azure</div>
+                        <div class="skill-chip">🟠 AWS</div>
+                        <div class="skill-chip">🐳 Docker</div>
+                        <div class="skill-chip"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="skill-chip"><i class="fab fa-github"></i> GitHub</div>
+                        <div class="skill-chip"><i class="fab fa-bitbucket"></i> Bitbucket</div>
+                        <div class="skill-chip">⚙️ Cloud Functions</div>
+                        <div class="skill-chip">🚀 App Engine</div>
+                        <div class="skill-chip">🤖 Google ADK</div>
+                        <div class="skill-chip">🔌 MCP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-award"></i> CREDENTIALS</span>
+                <h2 class="section-title">Certifications & <span class="gradient-text">Awards</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Generative AI Certification</h3>
+                    <p class="cert-issuer"><i class="fab fa-microsoft"></i> Microsoft</p>
+                </div>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Azure Fundamentals</h3>
+                    <p class="cert-issuer"><i class="fab fa-microsoft"></i> Microsoft</p>
+                </div>
+                <div class="cert-card glass-card">
+                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p class="cert-issuer"><i class="fab fa-aws"></i> Amazon Web Services</p>
+                </div>
+                <div class="cert-card glass-card award-card">
+                    <div class="cert-icon trophy"><i class="fas fa-trophy"></i></div>
+                    <h3>Spot Award</h3>
+                    <p class="cert-issuer"><i class="fas fa-building"></i> Bristlecone — Jul 2025</p>
+                    <p class="cert-description">Leading smart AI initiatives at Mahindra — chatbots, OCR automation, and Generative AI exploration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-satellite-dish"></i> LET'S CONNECT</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Ready to build something intelligent together? I'm always open to discussing 
+                    <strong>AI projects</strong>, innovative ideas, or opportunities to push the boundaries of what's possible.<br>
+                    <span class="contact-highlight">With over <strong>20 years</strong> of AI expertise, I bring deep industry knowledge and a passion for building the future.</span>
+                </p>
+                <a href="resume_prakash_mishra_19-02-26.pdf" class="btn btn-cyber btn-glow btn-resume" download>
+                    <span class="btn-content"><i class="fas fa-file-download"></i> Download Resume</span>
+                    <span class="btn-shimmer"></span>
+                </a>
+                <div class="contact-cards">
+                    <a href="tel:+919673441853" class="contact-card glass-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div><span class="contact-label">Phone</span><span class="contact-value">+91 9673441853</span></div>
+                    </a>
+                    <a href="mailto:mishraprakash453@gmail.com" class="contact-card glass-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div><span class="contact-label">Email</span><span class="contact-value">mishraprakash453@gmail.com</span></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prakash-mishra-428a86187/" target="_blank" class="contact-card glass-card">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <div><span class="contact-label">LinkedIn</span><span class="contact-value">Prakash Mishra</span></div>
+                    </a>
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><span class="contact-label">Location</span><span class="contact-value">Vasai, Mumbai, India</span></div>
+                    </div>
+                </div>
+                <a href="mailto:mishraprakash453@gmail.com" class="btn btn-primary btn-glow btn-large">
+                    <span class="btn-content"><i class="fas fa-paper-plane"></i> Say Hello</span>
+                    <span class="btn-shimmer"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by <span class="gradient-text">Prakash Mishra</span></p>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <div class="chatbot-toggle-inner"><i class="fas fa-robot"></i></div>
+        <span class="chatbot-badge">Ask AI!</span>
+        <div class="chatbot-rings"><span></span><span></span></div>
+    </div>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar"><i class="fas fa-robot"></i><span class="avatar-pulse"></span></div>
+                <div>
+                    <h4>Prakash's AI Assistant</h4>
+                    <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                </div>
+            </div>
+            <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chat-message bot">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-bubble">
+                    Hi! I'm Prakash's AI assistant. Ask me anything about his experience, skills, projects, or AI work!
+                    <div class="chat-suggestions">
+                        <button class="suggestion-btn" onclick="askSuggestion('What are his skills?')">🛠️ Skills</button>
+                        <button class="suggestion-btn" onclick="askSuggestion('Tell me about his experience')">💼 Experience</button>
+                        <button class="suggestion-btn" onclick="askSuggestion('What projects has he built?')">🚀 Projects</button>
+                        <button class="suggestion-btn" onclick="askSuggestion('Tell me about Copilot Agent')">🧩 Copilot</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatInput" placeholder="Ask about Prakash's AI work..." autocomplete="off">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
